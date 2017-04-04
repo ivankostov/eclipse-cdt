@@ -4,4 +4,4 @@ docker run -ti --rm \
            -e DISPLAY=$DISPLAY \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v $PWD/workspace:/home/develop/workspace \
-	    ikostov/eclipse-cdt:v4.6.3
+	    ivankostov/eclipse-cdt:v4.6.3
