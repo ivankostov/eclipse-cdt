@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y software-properties-common
 RUN apt-get update && apt-get install -y default-jre libxext-dev libxrender-dev libxtst-dev && \
     apt-get -y autoremove 
 
-run apt-get update && apt-get install -y wget
+RUN apt-get update && apt-get install -y wget
 
 RUN apt-get update && apt-get install -y libgtk2.0-0 libcanberra-gtk-module
 
