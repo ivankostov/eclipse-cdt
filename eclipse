@@ -4,4 +4,5 @@ docker run -ti --rm \
            -e DISPLAY=$DISPLAY \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v $PWD/workspace:/home/develop/workspace \
-	    ivankostov/eclipse-cdt:v4.6.3
+	   -v $(pwd)/workspace:/home/developer/workspace -e USER=$USER  -e USERID=$UID \
+	    ivankostov/eclipse-cdt

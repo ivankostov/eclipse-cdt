@@ -19,12 +19,7 @@ RUN wget http://ftp.fau.de/eclipse/technology/epp/downloads/release/neon/3/eclip
 ADD run /usr/local/bin/eclipse
 
 RUN chmod +x /usr/local/bin/eclipse && \
-    mkdir -p /home/developer && \
-    echo "developer:x:1000:1000:Developer,,,:/home/developer:/bin/bash" >> /etc/passwd && \
-    echo "developer:x:1000:" >> /etc/group && \
-    chown developer:developer -R /home/developer 
-
-RUN mkdir -p /home/develop/workspace
+    useradd -ms /bin/bash  developer
 
 USER developer
 ENV HOME /home/developer
