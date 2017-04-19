@@ -3,7 +3,7 @@
 docker run -ti --rm \
 	--cap-add=SYS_PTRACE \
 	-e DISPLAY=$DISPLAY \
+	-e USER=$USER  -e USERID=$UID \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
-        -v $PWD/workspace:/home/develop/workspace \
-	-v $(pwd)/workspace:/home/developer/workspace -e USER=$USER  -e USERID=$UID \
+	-v $(pwd)/workspace:/home/developer/workspace \
 	    ivankostov/eclipse-cdt
