@@ -1,9 +1,16 @@
 #!/bin/bash
+dir=$PWD/workspace
+
+
+if [[ ! -e $dir ]]; then
+    mkdir $dir
+elif [[ ! -d $dir ]]; then
+    echo "$dir already exists but is not a directory" 1>&2
+fi
 
 docker run -ti --rm \
 	--cap-add=SYS_PTRACE \
 	-e DISPLAY=$DISPLAY \
-	-e USER=$USER  -e USERID=$UID \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
-	-v $(pwd)/workspace:/home/developer/workspace \
-	    ivankostov/eclipse-cdt
+	-v $dir:/home/developer/workspace -e USER=$USER  -e USERID=$UID \
+	ivankostov/eclipse-cdt
